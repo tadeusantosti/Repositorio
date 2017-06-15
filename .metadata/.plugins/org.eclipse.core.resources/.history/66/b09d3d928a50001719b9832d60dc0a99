@@ -1,0 +1,84 @@
+package br.com.caelum.leilao.dominio;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class AvaliadorTest {
+	
+	@Test
+    public void main() {
+
+        Usuario tadeu = new Usuario("Tadeu");
+        Usuario roberto = new Usuario("Roberto");
+        Usuario andressa = new Usuario("Andressa");
+
+        Leilao leilao = new Leilao("TV LED SMART 50' ");
+
+        leilao.propoe(new Lance(andressa,250.0));
+        leilao.propoe(new Lance(tadeu,300.0));
+        leilao.propoe(new Lance(roberto,400.0));
+
+
+        Avaliador leiloeiro = new Avaliador();
+        leiloeiro.avalia(leilao);
+
+
+        double maiorEsperado = 400;
+        double menorEsperado = 250;
+
+        Assert.assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
+        Assert.assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
+    }
+	
+	@Test
+    public void validaUnicoLanceTest() {
+
+        Usuario tadeu = new Usuario("Tadeu");
+
+        Leilao leilao = new Leilao("TV LED SMART 50' ");
+
+        leilao.propoe(new Lance(tadeu,200.0));
+
+        Avaliador leiloeiro = new Avaliador();
+        leiloeiro.avalia(leilao);
+
+
+        double maiorEsperado = 200;
+        double menorEsperado = 200;
+
+        Assert.assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
+        Assert.assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
+    }
+	
+
+	@Test
+    public void validaLancesRandomicosTest() {
+
+        Usuario tadeu = new Usuario("Tadeu");
+        Usuario valeria = new Usuario("Valeria");
+        Usuario juliana = new Usuario("Juliana");
+        Usuario bianca = new Usuario("Bianca");
+        Usuario luis = new Usuario("Luis");
+        Usuario cleverson = new Usuario("Cleverson");
+
+        Leilao leilao = new Leilao("TV LED SMART 50' ");
+
+        leilao.propoe(new Lance(tadeu,200.0));
+        leilao.propoe(new Lance(valeria,450.0));
+        leilao.propoe(new Lance(juliana,120.0));
+        leilao.propoe(new Lance(bianca,700.0));
+        leilao.propoe(new Lance(luis,630.0));
+        leilao.propoe(new Lance(cleverson,230.0));
+
+        Avaliador leiloeiro = new Avaliador();
+        leiloeiro.avalia(leilao);
+
+
+        double maiorEsperado = 700;
+        double menorEsperado = 120;
+
+        Assert.assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
+        Assert.assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
+    }
+	
+}

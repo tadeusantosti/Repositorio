@@ -1,0 +1,33 @@
+package br.com.caelum.leilao.dominio;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class AvaliadorTest {
+	
+	@Test
+    public void main() {
+
+        Usuario joao = new Usuario("Tadeu");
+        Usuario jose = new Usuario("Roberto");
+        Usuario maria = new Usuario("Andressa");
+
+        Leilao leilao = new Leilao("TV LED SMART 50' ");
+
+        leilao.propoe(new Lance(maria,250.0));
+        leilao.propoe(new Lance(joao,300.0));
+        leilao.propoe(new Lance(jose,400.0));
+
+
+        Avaliador leiloeiro = new Avaliador();
+        leiloeiro.avalia(leilao);
+
+
+        double maiorEsperado = 400;
+        double menorEsperado = 250;
+
+        Assert.assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
+        Assert.assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
+    }
+
+}

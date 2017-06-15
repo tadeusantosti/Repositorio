@@ -1,0 +1,59 @@
+package br.com.caelum.leilao.dominio;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class AvaliadorTest {
+	
+	@Test
+    public void main() {
+
+        Usuario tadeu = new Usuario("Tadeu");
+        Usuario roberto = new Usuario("Roberto");
+        Usuario andressa = new Usuario("Andressa");
+
+        Leilao leilao = new Leilao("TV LED SMART 50' ");
+
+        leilao.propoe(new Lance(andressa,250.0));
+        leilao.propoe(new Lance(tadeu,300.0));
+        leilao.propoe(new Lance(roberto,400.0));
+
+
+        Avaliador leiloeiro = new Avaliador();
+        leiloeiro.avalia(leilao);
+
+
+        double maiorEsperado = 400;
+        double menorEsperado = 250;
+
+        Assert.assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
+        Assert.assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
+    }
+	
+	@Test
+    public void validaUnicoLanceTest() {
+
+        Usuario tadeu = new Usuario("Tadeu");
+        Usuario roberto = new Usuario("Roberto");
+        Usuario andressa = new Usuario("Andressa");
+
+        Leilao leilao = new Leilao("TV LED SMART 50' ");
+
+        leilao.propoe(new Lance(andressa,250.0));
+        leilao.propoe(new Lance(tadeu,300.0));
+        leilao.propoe(new Lance(roberto,400.0));
+
+
+        Avaliador leiloeiro = new Avaliador();
+        leiloeiro.avalia(leilao);
+
+
+        double maiorEsperado = 400;
+        double menorEsperado = 250;
+
+        Assert.assertEquals(maiorEsperado, leiloeiro.getMaiorLance(), 0.0001);
+        Assert.assertEquals(menorEsperado, leiloeiro.getMenorLance(), 0.0001);
+    }
+	
+
+}
