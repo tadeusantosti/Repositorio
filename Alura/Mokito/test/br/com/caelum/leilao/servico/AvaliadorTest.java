@@ -1,5 +1,6 @@
 package br.com.caelum.leilao.servico;
 
+import br.com.caelum.leilao.dominio.Avaliador;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 

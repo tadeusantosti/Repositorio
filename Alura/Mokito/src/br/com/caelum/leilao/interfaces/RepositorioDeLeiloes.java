@@ -1,4 +1,4 @@
-package br.com.caelum.leilao.servico;
+package br.com.caelum.leilao.interfaces;
 
 import br.com.caelum.leilao.dominio.Leilao;
 import java.util.List;
