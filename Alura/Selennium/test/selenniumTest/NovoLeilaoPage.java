@@ -17,22 +17,22 @@ public class NovoLeilaoPage {
 
         WebElement txtNome = driver.findElement(By.name("leilao.nome"));
         WebElement txtValor = driver.findElement(By.name("leilao.valorInicial"));
-        Thread.sleep(3000);
+        Thread.sleep(100);
         txtNome.sendKeys(nome);
         txtValor.sendKeys(String.valueOf(valor));
 
         WebElement combo = driver.findElement(By.name("leilao.usuario.id"));
         Select cbUsuario = new Select(combo);
         cbUsuario.selectByVisibleText(usuario);
-        Thread.sleep(3000);
+        Thread.sleep(100);
         if (usado) {
             WebElement ckUsado = driver.findElement(By.name("leilao.usado"));
             ckUsado.click();
-            Thread.sleep(3000);
+            Thread.sleep(100);
         }
 
         txtNome.submit();
-        Thread.sleep(3000);
+        Thread.sleep(100);
     }
     
       public boolean validacaoDeNomeeValorObrigatorio() {

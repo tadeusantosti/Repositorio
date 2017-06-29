@@ -22,7 +22,7 @@ public class NovoUsuarioPage {
 
         txtNome.submit();
 
-        Thread.sleep(3000);
+        Thread.sleep(100);
 
     }
 
