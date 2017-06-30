@@ -83,14 +83,14 @@ public class LeilaoDao {
 
     @SuppressWarnings("unchecked")
     public List<Leilao> listaLeiloesDoUsuario(Usuario usuario) {
-        return session.createQuery("select lance.leilao "
-                + "from Lance lance "
-                + "where lance.usuario = :usuario")
+        return session.createQuery("select distinct lance.leilao "
+                + "from Lance lance "                
+                + "where lance.usuario = :usuario")                                
                 .setParameter("usuario", usuario).list();
     }
 
     public double getValorInicialMedioDoUsuario(Usuario usuario) {
-        return (Double) session.createQuery("select avg(lance.leilao.valorInicial) "
+        return (Double) session.createQuery("select avg(lance.valor) "
                 + "from Lance lance "
                 + "where lance.usuario = :usuario")
                 .setParameter("usuario", usuario)
