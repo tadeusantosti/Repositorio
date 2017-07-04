@@ -3,6 +3,7 @@ package testesdeintegracao.testes;
 import java.util.Calendar;
 import java.util.List;
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNull;
 import org.hibernate.Session;
 import org.junit.After;
 import org.junit.Before;
@@ -316,7 +317,7 @@ public class LeilaoDaoTests {
                 .comDono(mauricio)
                 .comValor(3200.0)
                 .constroi();
-        
+
         Lance lance3 = new Lance(Calendar.getInstance(), mauricio, 100.0, leilao2);
         leilao2.adicionaLance(lance3);
         usuarioDao.salvar(mauricio);
@@ -326,5 +327,24 @@ public class LeilaoDaoTests {
         double valorMedioDoUsuario = leilaoDao.getValorInicialMedioDoUsuario(mauricio);
 
         assertEquals(133.333, valorMedioDoUsuario, 0.001);
+    }
+
+    @Test
+    public void deveDeletarLeilao() {
+        Usuario mauricio = new Usuario("Mauricio", "mauricio@aniche.com.br");
+        usuarioDao.salvar(mauricio);
+
+        Leilao leilao = new LeilaoBuilder()
+                .comDono(mauricio)
+                .comValor(3000.0)
+                .constroi();
+
+        leilaoDao.deleta(leilao);
+
+        session.flush();
+        session.clear();
+
+        assertNull(leilaoDao.porId(leilao.getId()));        
+
     }
 }
