@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "728227671782",
+    "firebase_url": "https://reservarsala-24f83.firebaseio.com",
+    "project_id": "reservarsala-24f83",
+    "storage_bucket": "reservarsala-24f83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728227671782:android:1646ac1750683f85",
+        "android_client_info": {
+          "package_name": "info.tadeuti.reservasala"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728227671782-plbel7gasa1mmqsfuamn0pf4knlj0g9g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "info.tadeuti.reservasala",
+            "certificate_hash": "2c636e84dac3995258cdb445d31d19a32a397cfb"
+          }
+        },
+        {
+          "client_id": "728227671782-3joftmf9tdv9v3mjq2ra4r6mie35hkji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDacrWXtxVbBk-zSfPgsTi9-WRgbyolYPM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728227671782-3joftmf9tdv9v3mjq2ra4r6mie35hkji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
