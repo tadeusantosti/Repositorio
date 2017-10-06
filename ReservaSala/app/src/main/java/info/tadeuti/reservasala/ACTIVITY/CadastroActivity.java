@@ -9,8 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
-import android.R;
-import android.R.*;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,10 +18,12 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
+
 import info.tadeuti.reservasala.DAO.ConfiguracaoFireBase;
 import info.tadeuti.reservasala.Entidades.Usuario;
 import info.tadeuti.reservasala.Helper.Base64Custom;
 import info.tadeuti.reservasala.Helper.Preferencias;
+import info.tadeuti.reservasala.R;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -40,15 +41,15 @@ public class CadastroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro);
+        setContentView(info.tadeuti.reservasala.R.layout.activity_cadastro);
 
-        editCadNome = (EditText) findViewById(R.id.editCadNome);
-        editCadCargo = (EditText) findViewById(R.id.editCadCargo);
-        editCadEmail = (EditText) findViewById(R.id.editCadEmail);
-        editCadSenha = (EditText) findViewById(R.id.editCadSenha);
-        editCadConfirmarSenha = (EditText) findViewById(R.id.editCadConfirmarSenha);
-        rbMasculino = (RadioButton) findViewById(R.id.rbMasculino);
-        rbFeminino = (RadioButton) findViewById(R.id.rbFeminino);
+        editCadNome = (EditText) findViewById(info.tadeuti.reservasala.R.id.editCadNome);
+        editCadCargo = (EditText) findViewById(info.tadeuti.reservasala.R.id.editCadCargo);
+        editCadEmail = (EditText) findViewById(info.tadeuti.reservasala.R.id.editCadEmail);
+        editCadSenha = (EditText) findViewById(info.tadeuti.reservasala.R.id.editCadSenha);
+        editCadConfirmarSenha = (EditText) findViewById(info.tadeuti.reservasala.R.id.editCadConfirmarSenha);
+        rbMasculino = (RadioButton) findViewById(info.tadeuti.reservasala.R.id.rbMasculino);
+        rbFeminino = (RadioButton) findViewById(info.tadeuti.reservasala.R.id.rbFeminino);
         btnSalvar = (Button) findViewById(R.id.btnSalvar);
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {

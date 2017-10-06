@@ -41,6 +41,7 @@
         android:textSize="15sp"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:id="@+id/tvAbreCadastro"
         android:text="Nao tem cadastro? Clique aqui"
         />
 

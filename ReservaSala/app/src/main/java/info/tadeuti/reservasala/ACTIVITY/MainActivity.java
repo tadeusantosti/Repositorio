@@ -1,8 +1,6 @@
 package info.tadeuti.reservasala.ACTIVITY;
 
 import android.content.Intent;
-import android.R;
-import android.R.*;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -22,20 +20,20 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(info.tadeuti.reservasala.R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(info.tadeuti.reservasala.R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(info.tadeuti.reservasala.R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, info.tadeuti.reservasala.R.string.navigation_drawer_open, info.tadeuti.reservasala.R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(info.tadeuti.reservasala.R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        btnAbrirActivityLogin = (Button) findViewById(R.id.btnFazerLogin);
+        btnAbrirActivityLogin = (Button) findViewById(info.tadeuti.reservasala.R.id.btnFazerLogin);
         btnAbrirActivityLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +45,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(info.tadeuti.reservasala.R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(info.tadeuti.reservasala.R.menu.main, menu);
         return true;
     }
 
@@ -70,7 +68,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == info.tadeuti.reservasala.R.id.action_settings) {
             return true;
         }
 
@@ -83,21 +81,21 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == info.tadeuti.reservasala.R.id.nav_camera) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == info.tadeuti.reservasala.R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == info.tadeuti.reservasala.R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == info.tadeuti.reservasala.R.id.nav_manage) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == info.tadeuti.reservasala.R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == info.tadeuti.reservasala.R.id.nav_send) {
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(info.tadeuti.reservasala.R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
