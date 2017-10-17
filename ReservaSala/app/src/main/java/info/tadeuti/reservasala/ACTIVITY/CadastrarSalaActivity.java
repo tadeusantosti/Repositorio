@@ -24,7 +24,7 @@ public class CadastrarSalaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(info.tadeuti.reservasala.R.layout.activity_cadastrar_sala);
-
+        btnSalvar = (Button) findViewById(R.id.btnSalvar);
         descricao = (EditText) findViewById(info.tadeuti.reservasala.R.id.editCadDescricao);
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {
