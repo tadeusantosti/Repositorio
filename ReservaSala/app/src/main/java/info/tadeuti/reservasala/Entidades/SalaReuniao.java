@@ -18,7 +18,7 @@ public class SalaReuniao {
 
     public void salvarSalaReuniao(){
         DatabaseReference referencia = ConfiguracaoFireBase.getFireBase();
-        referencia.child("salareuniao").child(getId()).child(getDescricao()).setValue(this);
+        referencia.push().child("salareuniao").child(getDescricao()).setValue(this);
     }
 
     @Exclude
