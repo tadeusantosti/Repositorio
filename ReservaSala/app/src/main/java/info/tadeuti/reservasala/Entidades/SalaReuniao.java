@@ -5,6 +5,7 @@ import com.google.firebase.database.Exclude;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import info.tadeuti.reservasala.DAO.ConfiguracaoFireBase;
 
@@ -18,7 +19,7 @@ public class SalaReuniao {
 
     public void salvarSalaReuniao(){
         DatabaseReference referencia = ConfiguracaoFireBase.getFireBase();
-        referencia.push().child("salareuniao").child(getDescricao()).setValue(this);
+        referencia.child("salasDeReuniao").child(getId()).child(getDescricao()).setValue(this);
     }
 
     @Exclude
@@ -32,7 +33,7 @@ public class SalaReuniao {
     }
 
     public String getId() {
-        return id;
+        return UUID.randomUUID().toString();
     }
 
     public void setId(String id) {
